@@ -1,7 +1,4 @@
-package a2024_08_21;
-
-import java.util.ArrayList;
-import java.util.List;
+package A20240821;
 
 public class main {
     public static void main(String[] args) {

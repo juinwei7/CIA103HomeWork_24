@@ -1,11 +1,10 @@
-package a2024_08_23;
+package A20240823;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class a2024_08_23 {
     public static void main(String[] arg){
-        work04();
+        work03();
 
     }
 
@@ -69,9 +68,4 @@ public class a2024_08_23 {
         System.out.print( "\n" + "總共有：" + leg);
     }
 
-    //透過Math類別的靜態方法random(),可以自動產生隨機的數字
-    //• 用法參考如圖所示:
-    private static void work04(){
-
-    }
 }

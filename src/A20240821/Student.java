@@ -1,4 +1,4 @@
-package a2024_08_21;
+package A20240821;
 
 public class Student {
     String name;

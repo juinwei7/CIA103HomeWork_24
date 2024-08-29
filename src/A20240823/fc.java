@@ -1,4 +1,4 @@
-package a2024_08_23;
+package A20240823;
 
 import java.util.Arrays;
 
