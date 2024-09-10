@@ -1,9 +1,11 @@
-package A20240829;
+package HomeWork;
 
 import A20240829.Work04.MyRectangleMain;
 import A20240829.work03.Work03;
 
-public class HomeWork {
+import java.util.Scanner;
+
+public class Work05 {
     public static void main(String[] args){
         work05();
     }
@@ -11,9 +13,9 @@ public class HomeWork {
     //請設計一個方法為starSquare(int width, int height),當使用者鍵盤輸入寬與高時,即會印出對應的*長方形,如
     public static void work01(){
         System.out.println("請輸入長度：");
-        int a = Fc.getscannerInt();
+        int a = getscannerInt();
         System.out.println("請輸入寬度：");
-        int b = Fc.getscannerInt();
+        int b = getscannerInt();
 
         for (int i = 0; i<b; i++){
             for (int j = 0; j<a; j++){
@@ -27,7 +29,7 @@ public class HomeWork {
     public static void work02(){
         int[] regList = new int[10];
         for (int i = 0; i<regList.length; i++){
-            regList[i] = Fc.getrang(100);
+            regList[i] = getrang(100);
         }
         int toto = 0;
         for (int i : regList){
@@ -65,7 +67,33 @@ public class HomeWork {
     //身為程式設計師的你,收到一個任務,要幫系統的註冊新增驗證碼的功能,請設計一個方法
     //genAuthCode(),當呼叫此方法時,會回傳一個8位數的驗證碼,此驗證碼內容包含了英文大小寫
     public static void work05(){
-        String nb = Fc.genAuthCode(8);
+        String nb = genAuthCode(8);
         System.out.println("本次隨機產生的驗證碼為： \n" + nb);
+    }
+
+/*===============================
+
+                FC
+
+===============================*/
+
+    public static int getscannerInt(){
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextInt();
+    }
+
+    public static int getrang(int rag){
+        double reg0 = Math.random() * rag + 1;
+        return (int) reg0;
+    }
+
+    public static String genAuthCode(int serialNumber) {
+        StringBuilder sb = new StringBuilder(serialNumber);
+        String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        for (int i = 0; i < serialNumber; i++) {
+            int randomIndex = (int) (Math.random() * CHARACTERS.length() + 1);
+            sb.append(CHARACTERS.charAt(randomIndex));
+        }
+        return sb.toString();
     }
 }

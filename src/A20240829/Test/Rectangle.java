@@ -7,7 +7,8 @@ public class Rectangle extends Block{
 
     public Rectangle(double width, double longe) throws CubeException{
         super("長方形");
-        if (width < 0 || longe<0){
+        if (width < 0 || longe < 0){
+            //CubeException cubeException = new CubeException()
             throw new CubeException("輸入錯誤，必須大於0");
         }
         this.width = width;

@@ -5,10 +5,11 @@ public class Main {
         Block cube = null;
         Block rectangle = null;
         try {
-            cube = new Cube(10);
+            cube = new Cube(-10);
             rectangle = new Rectangle(6,8);
         }catch (CubeException e){
-            System.out.println(e.getMessage());
+            //System.out.println(e.getMessage());
+            e.printStackTrace();
             return;
         }
 

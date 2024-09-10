@@ -1,8 +1,9 @@
-package A20240823;
+package HomeWork;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class a2024_08_23 {
+public class Work03 {
     public static void main(String[] arg){
         work03();
 
@@ -20,7 +21,7 @@ public class a2024_08_23 {
         int s02 = scanner.nextInt();
         System.out.println("請輸入第三個值：");
         int s03 = scanner.nextInt();
-        String ans = fc.isTr(s01,s02,s03);
+        String ans = isTr(s01,s02,s03);
         System.out.println(ans);
     }
 
@@ -66,6 +67,32 @@ public class a2024_08_23 {
             }
         }
         System.out.print( "\n" + "總共有：" + leg);
+    }
+
+
+/*===============================
+
+                FC
+
+===============================*/
+    public static String isTr(int a, int b, int c) {
+        int[] abc = {a,b,c};
+        Arrays.sort(abc);
+        if (a + b <= c) {
+            return "無法構成三角形";
+        }
+        if (a*a + b*b == c*c){
+            return "直角三角形";
+        }
+        if (a == b && a==c){
+            return "正三角形";
+        }
+        if (a == b || a==c || b==c){
+            return "等腰三角形";
+        }
+        else {
+            return "其他三角形";
+        }
     }
 
 }

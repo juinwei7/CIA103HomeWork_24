@@ -1,8 +1,8 @@
-package A20240827;
+package HomeWork;
 
 import java.util.*;
 
-public class A20240827 {
+public class Work04 {
     public static void main(String... args){
         work06();
     }
@@ -67,7 +67,7 @@ public class A20240827 {
         colleagueMoney.put(27, 1200);
         int toto = 0;
         System.out.println("輸入想借多少錢：");
-        int scanner = Integer.parseInt(Fc.getscanner());
+        int scanner = Integer.parseInt(getscanner());
 
         System.out.println("有錢可借的員工編號: ");
         for (Integer key : colleagueMoney.keySet()){
@@ -90,13 +90,13 @@ public class A20240827 {
         int totoDay = 0;
 
         System.out.println("請輸入年份：");
-        int yy = Fc.scannerConvert();
+        int yy = scannerConvert();
         System.out.println("請輸入月份：");
-        int mm = Fc.scannerConvert();
+        int mm = scannerConvert();
         System.out.println("請輸入幾號：");
-        int dd = Fc.scannerConvert();
+        int dd = scannerConvert();
 
-        if (Fc.isLeapYear(yy)){
+        if (isLeapYear(yy)){
             mmdd[1] = 29;
         }
 
@@ -146,5 +146,40 @@ public class A20240827 {
         if (object instanceof String){
             String.valueOf(object);
         }
+    }
+
+
+
+
+    /*===============================
+
+                    FC
+
+    ===============================*/
+    public static String getscanner(){
+        Scanner scanner = new Scanner(System.in);
+        return scanner.next();
+    }
+
+    public static int scannerConvert(){
+        String s = getscanner();
+        int i;
+        try {
+            i = Integer.getInteger(s);
+            return i;
+        } catch (Exception e) {
+            System.out.println("您輸入的不是數字");
+            throw new RuntimeException(e);
+        }
+    }
+    public static boolean isLeapYear(int year) {
+        if (year % 4 == 0) {
+            if (year % 100 == 0) {
+                return year % 400 == 0;
+            } else {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -1,6 +1,6 @@
-package A20240817;
+package HomeWork;
 
-public class a2024_08_17 {
+public class Work02 {
 
     public static void main(String[] args) {
 
